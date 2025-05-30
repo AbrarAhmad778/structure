@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Navigation Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul class="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dummy content to enable scrolling -->
+  <section id="home" class="section">Home Section</section>
+  <section id="about" class="section">About Section</section>
+  <section id="services" class="section">Services Section</section>
+  <section id="contact" class="section">Contact Section</section>
+
+  <script src="script.js"></script>
+</body>
+
+<style>/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  padding: 15px 30px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+nav.scrolled {
+  background-color: #0a0f30;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-list a:hover {
+  background-color: #4054f8;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Section Styling */
+.section {
+  height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(to bottom, #f8f8f8, #ddd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
+<script>
+    // Change navbar background on scroll
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+</script>
+
+
+
+</html>
